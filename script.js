@@ -1,6 +1,11 @@
 // Массив для хранения товаров в корзине
 let cart = [];
 
+// Функция для сохранения корзины в LocalStorage
+const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
+
 // Функция для подсчёта общей стоимости товаров
 const calculateTotal = () => {
 
@@ -44,6 +49,8 @@ const renderCart = () => {
             // Удаляем товар из массива
             cart.splice(index, 1);
 
+            saveCart();
+
             // Обновляем корзину
             renderCart();
 
@@ -69,36 +76,26 @@ buttons.forEach(button => {
 
     button.addEventListener("click", function () {
 
-        // Находим карточку товара
         const product = button.closest(".product");
 
-        // Получаем информацию о товаре
         const name = product.dataset.name;
         const price = Number(product.dataset.price);
         const category = product.dataset.category;
 
-        // Проверяем, есть ли такой товар в корзине
         const existingProduct = cart.find(item => item.name === name);
 
-        // Если товар уже есть в корзине
         if (existingProduct) {
-
-            // Увеличиваем его количество
             existingProduct.quantity++;
-
         } else {
-
-            // Если товара нет, добавляем его в корзину
             cart.push({
                 name: name,
                 price: price,
                 category: category,
                 quantity: 1
             });
-
         }
 
-        // Обновляем отображение корзины
+        saveCart();
         renderCart();
 
     });
@@ -113,6 +110,9 @@ clearButton.addEventListener("click", () => {
 
     // Очищаем массив товаров
     cart = [];
+
+    // Сохраняем пустую корзину
+    saveCart();
 
     // Обновляем отображение корзины
     renderCart();
@@ -136,6 +136,8 @@ payButton.addEventListener("click", () => {
 
         // Очищаем корзину
         cart = [];
+
+        saveCart();
 
         // Обновляем отображение корзины
         renderCart();
@@ -176,3 +178,11 @@ categoryFilter.addEventListener("change", () => {
     });
 
 });
+
+// Загружаем сохранённую корзину из LocalStorage
+const savedCart = localStorage.getItem("cart");
+
+if (savedCart) {
+    cart = JSON.parse(savedCart);
+    renderCart();
+}
