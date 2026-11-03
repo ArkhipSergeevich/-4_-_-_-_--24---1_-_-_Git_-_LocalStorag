@@ -1,0 +1,144 @@
+
+/* Общие настройки страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f7f4;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Шапка сайта */
+header {
+    background-color: #237a57;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Заголовок сайта */
+h1 {
+    margin: 10px;
+}
+
+/* Меню сайта */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Изменение цвета ссылки при наведении */
+nav a:hover {
+    color: #b9f5d0;
+}
+
+/* Основная часть страницы */
+main {
+    background-color: white;
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Заголовки */
+h2 {
+    color: #237a57;
+}
+
+/* Абзацы */
+p {
+    line-height: 1.6;
+}
+
+/* Ссылки */
+main a {
+    color: #237a57;
+    font-weight: bold;
+}
+
+/* Подвал сайта */
+footer {
+    background-color: #237a57;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Заголовки разделов товара */
+.section-title {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 400;
+    background-color: rgb(220, 240, 230);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Краткое описание товара */
+.short-description {
+    color: rgb(90, 110, 100);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+/* Подробное описание товара */
+.full-description {
+    color: rgb(50, 70, 60);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+
+
+/* Список характеристик товара */
+.specs-list {
+    list-style: none;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(40, 80, 60);
+    background-color: rgb(235, 245, 238);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Оформление отдельных характеристик */
+.specs-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+/* Собственный маркер списка */
+.specs-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    background-image: url("img/check.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* Отступы между характеристиками */
+.specs-list li {
+    margin-bottom: 10px;
+}
+

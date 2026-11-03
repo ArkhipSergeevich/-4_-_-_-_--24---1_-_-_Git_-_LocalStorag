@@ -1,0 +1,149 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Каталог лекарств | ФармаСеть</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+
+        <h1>Аптеки «ФармаСеть»</h1>
+
+        <p>Информационная система управления аптечной сетью</p>
+
+        <!-- Меню сайта -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог лекарств</a></li>
+                <li><a href="pharmacies.html">Аптеки</a></li>
+                <li><a href="suppliers.html">Поставщики</a></li>
+                <li><a href="requests.html">Заявки на поставку</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <hr>
+
+    <!-- Основное содержимое -->
+    <main>
+
+        <h2>Каталог лекарственных препаратов</h2>
+
+        <p>
+            В данном разделе представлены лекарственные препараты,
+            доступные в аптечной сети «ФармаСеть».
+        </p>
+
+        <!-- Фильтр товаров по категориям -->
+<label for="category-filter">Категория товаров:</label>
+
+<select id="category-filter">
+    <option value="all">Все категории</option>
+    <option value="Обезболивающие">Обезболивающие</option>
+    <option value="Противовоспалительные">Противовоспалительные</option>
+</select>
+
+        <!-- Первый товар -->
+        <div class="product"
+             data-name="Парацетамол"
+             data-price="120"
+             data-category="Обезболивающие">
+
+            <h3>Парацетамол</h3>
+
+            <a href="medicine_paracetamol.html">
+                <img src="img/paracetamol.jpg"
+                     alt="Парацетамол"
+                     width="150">
+            </a>
+
+            <p>Цена: 120 руб.</p>
+
+            <p>
+                <a href="medicine_paracetamol.html">
+                    Подробнее о препарате
+                </a>
+            </p>
+
+            <button class="add-to-cart">
+                Добавить в корзину
+            </button>
+
+        </div>
+
+        <hr>
+
+        <!-- Второй товар -->
+        <div class="product"
+             data-name="Ибупрофен"
+             data-price="180"
+             data-category="Противовоспалительные">
+
+            <h3>Ибупрофен</h3>
+
+            <a href="medicine_ibuprofen.html">
+                <img src="img/ibuprofen.jpg"
+                     alt="Ибупрофен"
+                     width="150">
+            </a>
+
+            <p>Цена: 180 руб.</p>
+
+            <p>
+                <a href="medicine_ibuprofen.html">
+                    Подробнее о препарате
+                </a>
+            </p>
+
+            <button class="add-to-cart">
+                Добавить в корзину
+            </button>
+
+        </div>
+
+        <!-- Корзина -->
+        <hr>
+
+        <h2>Корзина</h2>
+
+        <div id="cart-items">
+            <!-- Здесь будут отображаться товары -->
+        </div>
+
+        <p id="total-price">Итого: 0 руб.</p>
+
+        <button id="clear-cart">Очистить корзину</button>
+
+        <button id="pay-button">Оплатить</button>
+
+    </main>
+
+    <hr>
+
+    <!-- Подвал сайта -->
+    <footer>
+
+        <p>
+            &copy; 2026 Аптеки «ФармаСеть».
+            Все права защищены.
+        </p>
+
+    </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
